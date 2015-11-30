@@ -117,7 +117,6 @@ static bool getCoverageFormat12(vector<uint32_t>& coverage, const uint8_t* data,
     }
     uint32_t nGroups = readU32(data, kNGroupsOffset);
     if (nGroups >= kMaxNGroups || kFirstGroupOffset + nGroups * kGroupSize > size) {
-        android_errorWriteLog(0x534e4554, "25645298");
         return false;
     }
     for (uint32_t i = 0; i < nGroups; i++) {
